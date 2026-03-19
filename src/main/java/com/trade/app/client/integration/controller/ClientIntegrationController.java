@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.trade.app.client.integration.service.ClientIntegrationService;
 import com.trade.app.upstock.lib.service.UpstockUrlBuilder;
 
-@RequestMapping("/client")
+@RequestMapping("/api/client")
 @RestController
 public class ClientIntegrationController {
 
@@ -23,14 +23,9 @@ public class ClientIntegrationController {
 
 	@GetMapping("/validate")
 	public ResponseEntity<String> getValidationUrl(@RequestParam String clientCode) {
-		String url = clientIntegrationService.getTradeClientUrl("default", clientCode);
+		String url = clientIntegrationService.getTradeClientUrl("", clientCode);
 		return new ResponseEntity<String>(url, HttpStatus.OK);
 	}
 	
-	@GetMapping("/test")
-	public ResponseEntity<String> getTestUrl(@RequestParam String clientCode) {
-		String url = builder.buildAccessCodeUrl();
-		return new ResponseEntity<String>(url, HttpStatus.OK);
-	}
 
 }
