@@ -52,7 +52,7 @@
 		<dependency>
 			<groupId>com.trade.app</groupId>
 			<artifactId>trade-upstock-client-lib</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.2</version>
 		</dependency>
 
 		<dependency>
