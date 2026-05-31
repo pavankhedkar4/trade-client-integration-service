@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.trade.app.client.integration.config.annotations.RegisterClient;
+import com.trade.app.client.integration.dto.TradeHoldingsResponse;
 import com.trade.app.client.integration.enums.TradeClient;
 import com.trade.app.client.integration.service.ClientFactoryService;
 import com.trade.app.upstock.lib.service.UpstockClientService;
@@ -32,6 +33,14 @@ public class UpstockFactoryServiceImpl implements ClientFactoryService {
 		// TODO Auto-generated method stub
 		return upstockService.getAuthToken(code);
 	}
+
+
+	@Override
+	public String getTradeHoldings() {
+		// TODO Auto-generated method stub
+		return upstockService.getPortfolioHoldings();
+	}
+
 
 	/*
 	 * @Override public void registerClient() {

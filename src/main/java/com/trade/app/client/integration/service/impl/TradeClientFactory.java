@@ -15,10 +15,6 @@ import com.trade.app.client.integration.service.ClientFactoryService;
 public class TradeClientFactory {
 	static Map<TradeClient, ClientFactoryService> clientMap = new HashMap<>();
 
-	/*
-	 * public static void registorClientFactory(String code, ClientFactoryService
-	 * service) { clientMap.put(code, service); }
-	 */
 	@Autowired
 	public TradeClientFactory(List<ClientFactoryService> services) {
 		for(ClientFactoryService service: services) {
